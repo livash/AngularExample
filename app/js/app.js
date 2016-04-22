@@ -26,5 +26,5 @@ var squidApp = angular.module('squidApp', ['ngRoute'])
                 controller: 'SampleDirectiveController'
             }
         );
-        $routeProvider.otherwise({redirectTo: '/colors'})
+        $routeProvider.otherwise({redirectTo: '/starwars'})
 });
