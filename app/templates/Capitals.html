@@ -1,0 +1,13 @@
+<div class="capitals-main">
+    <div class="row">
+        Guess the capital of this country
+        <div class="country-card"></div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="flash-card span5 well" 
+            ng-repeat="country in countries" ng-click="showCapital($event, country.capital)">
+            <div class="country-card" country="country">
+        </div>
+    </div>
+</div>

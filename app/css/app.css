@@ -1,0 +1,16 @@
+.color-box {
+    padding: 30px 0;
+    text-align: center;
+    margin: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.color-box.no-text {
+    color: transparent;
+}
+
+.flash-card {
+    padding: 50px 0;
+    text-align: center;
+}
