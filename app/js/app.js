@@ -1,7 +1,13 @@
 'use strict';
 
-var eventsApp = angular.module('squidApp', ['ngRoute'])
+var squidApp = angular.module('squidApp', ['ngRoute'])
     .config(function($routeProvider) {
+		$routeProvider.when('/starwars',
+            {
+                templateUrl: 'templates/StarWarsData.html',
+                controller: 'starWarsController'
+            }
+        );
         $routeProvider.when('/colors',
             {
                 templateUrl: 'templates/Colors.html',

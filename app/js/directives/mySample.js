@@ -1,6 +1,6 @@
 'use strict';
 
-eventsApp.directive('mySample', function() {
+squidApp.directive('mySample', function() {
    // return directive definition object
     return {
         restrict: 'C',

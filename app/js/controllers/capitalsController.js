@@ -1,6 +1,6 @@
 'use strict';
 
-eventsApp.controller('capitalsController',
+squidApp.controller('capitalsController',
     function capitalsController($scope) {
         var data = [
             {

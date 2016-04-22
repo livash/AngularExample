@@ -1,6 +1,6 @@
 'use strict';
 
-eventsApp.controller('SampleDirectiveController', 
+squidApp.controller('SampleDirectiveController', 
     function SampleDirectiveController($scope) {
     
     }
