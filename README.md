@@ -5,7 +5,15 @@ Example of a single page app using Angular JS.
 
 ### Server
 
-If using the node server, from the command line run "npm install" and then either "server.sh" if you are on a linux box.
+This application runs using node server. To get started on a linux box, first run following commands:
+
+`npm install`
+
+`chmod +x server.sh`
+
+`./server.sh`
+
+Application can be viewed on `localhost:3000`
 
 ### Running the application
 
