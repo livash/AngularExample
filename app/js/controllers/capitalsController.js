@@ -20,13 +20,10 @@ squidApp.controller('capitalsController',
                 capital: 'Berlin'
             }
         ];
+
         $scope.countries = data;
-        
+
         $scope.showCapital = function(event, name) {
             $(event.currentTarget).text(name);
         }
-        
-        // $scope.refreshPage = function() {
-        //     $scope.countries = data;
-        // }
 });

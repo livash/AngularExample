@@ -2,19 +2,21 @@
     <div class="container">
         <div class="row">
             <div class="span4">
-                Clicking on each color will give you its name. Enjoy <i class="icon-gift icon-white"></i>!
+                {{description}}<i class="icon-gift icon-white"></i>!
             </div>
-            <button class="span3 btn btn-secondary" ng-click="shuffleColors()">
-                Shuffle colors
+            <button class="span3 btn btn-secondary"
+                ng-click="shuffleColors()"
+                ng-bind="shuffleButtonText">
             </button>
-            <button class="span3 btn btn-secondary" ng-click="removeColorNames($event)">
-                Remove color names
+            <button class="span3 btn btn-secondary"
+                ng-click="removeColorNames($event)"
+                ng-bind="removeButtonText">
             </button>
         </div>
         <hr />
         <div class="row">
             <div class="span3 color-box no-text" ng-repeat="color in colors"
-                 style="background-color: {{color}}" ng-click="showColorName($event, color)">
+            style="background-color: {{color}}" ng-click="showColorName($event, color)">
                 {{color}}
             <div>
         </div>

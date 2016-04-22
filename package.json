@@ -1,11 +1,11 @@
 {
-  "name": "SquidApp",
-  "version": "0.0.1",
-  "description": "This is a sample project.",
-  "main": "index.js",
-  "author": "Olena",
-  "license": "ISC",
-  "dependencies": {
-    "express": "4.13.0"
-  }
+    "name": "SquidApp",
+    "version": "0.0.1",
+    "description": "This is a sample project.",
+    "main": "index.js",
+    "author": "Olena",
+    "license": "ISC",
+    "dependencies": {
+        "express": "4.13.0"
+    }
 }

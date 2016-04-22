@@ -2,7 +2,7 @@
 
 var squidApp = angular.module('squidApp', ['ngRoute'])
     .config(function($routeProvider) {
-		$routeProvider.when('/starwars',
+        $routeProvider.when('/starwars',
             {
                 templateUrl: 'templates/StarWarsData.html',
                 controller: 'starWarsController'
@@ -27,4 +27,4 @@ var squidApp = angular.module('squidApp', ['ngRoute'])
             }
         );
         $routeProvider.otherwise({redirectTo: '/colors'})
-    });
+});

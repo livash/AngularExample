@@ -13,6 +13,6 @@ Navigate your browser to `http://localhost:3000/` to see the app running in your
 
 ### Disclaimer
 
-The express.js app was borrowed from https://github.com/a2wd/AngularFundamentals
+The express.js server was borrowed from https://github.com/a2wd/AngularFundamentals
 
 
