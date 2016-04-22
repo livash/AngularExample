@@ -11,4 +11,8 @@ If using the node server, from the command line run "npm install" and then eithe
 
 Navigate your browser to `http://localhost:3000/` to see the app running in your browser.
 
+### Disclaimer
+
+The express.js app was borrowed from https://github.com/a2wd/AngularFundamentals
+
 
