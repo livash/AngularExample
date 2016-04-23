@@ -20,10 +20,10 @@ var squidApp = angular.module('squidApp', ['ngRoute'])
                 controller: 'capitalsController'
             }
         );
-        $routeProvider.when('/sampleDirective', 
+        $routeProvider.when('/dates',
             {
-                templateUrl: 'templates/SampleDirective.html',
-                controller: 'SampleDirectiveController'
+                templateUrl: 'templates/Dates.html',
+                controller: 'datesController'
             }
         );
         $routeProvider.otherwise({redirectTo: '/starwars'})

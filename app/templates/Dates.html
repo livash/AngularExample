@@ -1,0 +1,13 @@
+<div class="colors-main">
+    <div class="container">
+        <div class="row">
+            <h2 ng-bind="description"></h2>
+        </div>
+        <div class="row">
+            <div class="span7" ng-repeat="date in dates">
+                <span class="span3" ng-bind="date"></span>
+                <span class="span2">{{date | momentFormatDate}}</span>
+            <div>
+        </div>
+    </div>
+</div>
