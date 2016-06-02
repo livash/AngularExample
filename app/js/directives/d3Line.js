@@ -13,7 +13,9 @@ squidApp.directive('d3line', function() {
     replace: true,
     templateUrl: '/templates/directives/d3line.html',
     scope: {
-      data: '='
+      data: '=',
+      width: '=',
+      height: '='
     },
     link: function(scope, element, attrs) {
       
@@ -25,8 +27,8 @@ squidApp.directive('d3line', function() {
        var svg = d3.select("#d3-line")
                    .append("svg")
                    .attr({
-                     width: w,
-                     height: h
+                     width: scope.width ? scope.width : w,
+                     height: scope.height ? scope.height: h
                    })
                    .style("background-color", "pink");
 

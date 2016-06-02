@@ -15,4 +15,6 @@ squidApp.controller('d3ExamplesController',
           {month: 90, sales: 23},
           {month: 100, sales: 7}
         ];
+        $scope.width = 600;
+        $scope.height = 300;
 });
