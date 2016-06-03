@@ -20,11 +20,11 @@ squidApp.directive('d3line', function() {
     link: function(scope, element, attrs) {
       
       var lineFun = d3.svg.line()
-         .x(function(d) { return d.month * xScale; })
-         .y(function(d) { return h - d.sales * yScale; })
+         .x(function(d) { return d.x * xScale; })
+         .y(function(d) { return h - d.y * yScale; })
          .interpolate("linear");
 
-       var svg = d3.select("#d3-line")
+       var svg = d3.select(".d3-line")
                    .append("svg")
                    .attr({
                      width: scope.width ? scope.width : w,
@@ -45,10 +45,10 @@ squidApp.directive('d3line', function() {
          .data(scope.data)
          .enter()
          .append("text")
-         .text(function(d) { return d.sales; })
+         .text(function(d) { return d.y; })
          .attr({
-           x: function(d) { return d.month * xScale;},
-           y: function(d) {return h - d.sales * yScale - 15;},
+           x: function(d) { return d.x * xScale;},
+           y: function(d) {return h - d.y * yScale - 15;},
            "text-anchor": "middle",
            "font-size": "14px",
            "font-weight": function(d, i) {
@@ -65,8 +65,8 @@ squidApp.directive('d3line', function() {
          .enter()
          .append("circle")
          .attr({
-           cx: function(d) {return d.month * xScale; },
-           cy: function(d) {return h - d.sales * yScale;},
+           cx: function(d) {return d.x * xScale; },
+           cy: function(d) {return h - d.y * yScale;},
            r: 5,
            stroke: "#333",
            fill: '#fff'
