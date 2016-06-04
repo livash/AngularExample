@@ -6,8 +6,9 @@ squidApp.directive('d3line', function() {
   var height = 100,
       width = 400,
       yScale = 2.5;
-      
-  var getMeasures = function(data) {
+  
+  // method returns an object with sorted arrays of X and Y values    
+  var getSortedArrays = function(data) {
     var xVals = [],
         yVals = [];
 
@@ -44,7 +45,7 @@ squidApp.directive('d3line', function() {
       margin: '='
     },
     link: function(scope, element, attrs) {
-      var measures = getMeasures(scope.data);
+      var measures = getSortedArrays(scope.data);
       var margin = getMargin(scope.margin);
       var w = scope.width ? scope.width : width;
       var h = scope.height ? scope.height: height;
