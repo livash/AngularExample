@@ -15,12 +15,10 @@ squidApp.directive('d3line', function() {
       xVals.push(el.x);
       yVals.push(el.y);
     });
-    xVals.sort();
-    yVals.sort();
     
     return {
-      xVals: xVals,
-      yVals: yVals
+      xVals: _.sortBy(xVals, function(x) { return x; }),
+      yVals: _.sortBy(yVals, function(y) { return y; })
     };
   };
   
@@ -51,14 +49,14 @@ squidApp.directive('d3line', function() {
       
       var xScale = d3.scale.linear()
                   .domain([measures.xVals[0], measures.xVals[measures.xVals.length - 1]])
-                  .range([0, w]);
+                  .range([0, (w - margin.left - margin.right)]);
       
       var lineFun = d3.svg.line()
          .x(function(d) { return xScale(d.x); })
          .y(function(d) { return h - d.y * yScale; })
          .interpolate("linear");
 
-       var svg = d3.select(".d3-chart")
+      var svg = d3.select(".d3-chart")
                    .append("svg")
                    .attr({
                      width: w,
@@ -67,7 +65,10 @@ squidApp.directive('d3line', function() {
                    .style("background-color", "pink")
                    .attr("class", "d3-line");
 
-       var graph = svg.append("path")
+      var g = svg.append("g")
+                .attr("transform", "translate(" + margin.left + ",0)");
+
+      var graph = g.append("path")
                      .attr({
                        d: lineFun(scope.data),
                        "stroke": "purple",
@@ -75,8 +76,8 @@ squidApp.directive('d3line', function() {
                        "fill": "none"
                      });
 
-       // add labels
-       var labels = svg.selectAll("text")
+      // add labels
+      var labels = g.selectAll("text")
          .data(scope.data)
          .enter()
          .append("text")
@@ -96,7 +97,7 @@ squidApp.directive('d3line', function() {
          });
          
         // add circles
-       var circles = svg.selectAll("circle")
+       var circles = g.selectAll("circle")
          .data(scope.data)
          .enter()
          .append("circle")
