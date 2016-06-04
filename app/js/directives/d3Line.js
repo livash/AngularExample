@@ -1,7 +1,6 @@
 'use strict';
 
 squidApp.directive('d3line', function() {
-  
   // constants
   var height = 100,
       width = 400,
@@ -37,7 +36,7 @@ squidApp.directive('d3line', function() {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: '/templates/directives/d3line.html',
+    templateUrl: '/templates/directives/d3chart.html',
     scope: {
       data: '=',
       width: '=',
@@ -59,13 +58,14 @@ squidApp.directive('d3line', function() {
          .y(function(d) { return h - d.y * yScale; })
          .interpolate("linear");
 
-       var svg = d3.select(".d3-line")
+       var svg = d3.select(".d3-chart")
                    .append("svg")
                    .attr({
                      width: w,
                      height: h
                    })
-                   .style("background-color", "pink");
+                   .style("background-color", "pink")
+                   .attr("class", "d3-line");
 
        var graph = svg.append("path")
                      .attr({
