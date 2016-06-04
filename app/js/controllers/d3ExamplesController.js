@@ -17,4 +17,10 @@ squidApp.controller('d3ExamplesController',
         ];
         $scope.width = 600;
         $scope.height = 300;
+        $scope.margin = {
+          left: 10,
+          top: 0,
+          right: 10,
+          bottom: 0
+        }
 });
