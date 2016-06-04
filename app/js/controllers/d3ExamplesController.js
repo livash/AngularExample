@@ -16,11 +16,11 @@ squidApp.controller('d3ExamplesController',
           {x: 100, y: 7}
         ];
         $scope.width = 600;
-        $scope.height = 300;
+        $scope.height = 150;
         $scope.margin = {
           left: 25,
-          top: 0,
+          top: 35,
           right: 25,
-          bottom: 0
+          bottom: 25
         }
 });

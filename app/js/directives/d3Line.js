@@ -1,10 +1,9 @@
 'use strict';
 
 squidApp.directive('d3line', function() {
-  // constants
+  // default values
   var height = 100,
-      width = 400,
-      yScale = 2.5;
+      width = 400;
   
   // method returns an object with sorted arrays of X and Y values    
   var getSortedArrays = function(data) {
@@ -50,30 +49,30 @@ squidApp.directive('d3line', function() {
       var xScale = d3.scale.linear()
                   .domain([measures.xVals[0], measures.xVals[measures.xVals.length - 1]])
                   .range([0, (w - margin.left - margin.right)]);
+      var yScale = d3.scale.linear()
+                  .domain([measures.yVals[0], measures.yVals[measures.yVals.length - 1]])
+                  .range([0, (h - margin.top - margin.bottom)]);
       
       var lineFun = d3.svg.line()
          .x(function(d) { return xScale(d.x); })
-         .y(function(d) { return h - d.y * yScale; })
+         .y(function(d) { return yScale(d.y); })
          .interpolate("linear");
 
       var svg = d3.select(".d3-chart")
                    .append("svg")
-                   .attr({
-                     width: w,
-                     height: h
-                   })
+                   .attr({ width: w, height: h })
                    .style("background-color", "pink")
                    .attr("class", "d3-line");
 
       var g = svg.append("g")
-                .attr("transform", "translate(" + margin.left + ",0)");
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
       var graph = g.append("path")
                      .attr({
                        d: lineFun(scope.data),
-                       "stroke": "purple",
+                       stroke: "purple",
                        "stroke-width": 2,
-                       "fill": "none"
+                       fill: "none"
                      });
 
       // add labels
@@ -84,7 +83,7 @@ squidApp.directive('d3line', function() {
          .text(function(d) { return d.y; })
          .attr({
            x: function(d) { return xScale(d.x);},
-           y: function(d) {return h - d.y * yScale - 15;},
+           y: function(d) {return yScale(d.y) - 15;}, // -15 is to position text above the data point
            "text-anchor": "middle",
            "font-size": "14px",
            "font-weight": function(d, i) {
@@ -103,7 +102,7 @@ squidApp.directive('d3line', function() {
          .append("circle")
          .attr({
            cx: function(d) {return xScale(d.x); },
-           cy: function(d) {return h - d.y * yScale;},
+           cy: function(d) {return yScale(d.y);},
            r: 5,
            stroke: "#333",
            fill: '#fff'
