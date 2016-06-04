@@ -41,17 +41,17 @@ squidApp.directive('d3line', function() {
       margin: '='
     },
     link: function(scope, element, attrs) {
-      var measures = getSortedArrays(scope.data);
+      var sorted = getSortedArrays(scope.data);
       var margin = getMargin(scope.margin);
       var w = scope.width ? scope.width : width;
       var h = scope.height ? scope.height: height;
       
       var xScale = d3.scale.linear()
-                  .domain([measures.xVals[0], measures.xVals[measures.xVals.length - 1]])
+                  .domain([sorted.xVals[0], sorted.xVals[sorted.xVals.length - 1]])
                   .range([0, (w - margin.left - margin.right)]);
       var yScale = d3.scale.linear()
-                  .domain([measures.yVals[0], measures.yVals[measures.yVals.length - 1]])
-                  .range([0, (h - margin.top - margin.bottom)]);
+                  .domain([sorted.yVals[0], sorted.yVals[sorted.yVals.length - 1]])
+                  .range([(h - margin.top - margin.bottom), 0]);
       
       var lineFun = d3.svg.line()
          .x(function(d) { return xScale(d.x); })
