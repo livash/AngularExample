@@ -18,3 +18,25 @@
 h2 {
     padding-left: 20px;
 }
+
+.d3-tip-column {
+  background-color: #fff;
+  border: 1px solid #888;
+  padding: 5px;
+  color: #555;
+}
+
+.d3-column-chart-title {
+  font-size: 14px;
+  font-weight: normal;
+  color: #ddd;
+}
+
+.d3-column {
+  fill: green;
+  stroke: #555;
+}
+
+.d3-column:hover {
+  fill: orange;
+}
