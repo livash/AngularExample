@@ -59,7 +59,7 @@ squidApp.directive('d3column', function() {
       var g = svg.append('g')
               .attr('transform', "translate(" + margin.left + "," + margin.top + ")");
 
-      // use external library for tootips in d3, called d3.tip
+      // use an external library for tootips in d3, called d3.tip
       var tip = d3.tip()
               .attr('class', 'd3-tip-column')
               .attr('fill', '#ddd')

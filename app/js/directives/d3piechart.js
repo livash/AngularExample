@@ -21,6 +21,18 @@ squidApp.directive('d3piechart', function() {
       var pie = d3.layout.pie()
           .sort(null)
           .value(function(d, i) { return d.y; });
+
+      // use external library for tootips in d3, called d3.tip
+      var tip = d3.tip()
+              .attr('class', 'd3-tip-column')
+              .attr('fill', '#ddd')
+              //.offset([-10, 0])
+              .offset(function() {
+                return [this.getBBox().height / 2, 0];
+              })
+              .html(function(d, i) {
+                return "<strong>Value: </strong><span style='color: red;'>" + d.data.y + "</span>"; 
+              });
       
       var svg = d3.select('.d3-chart')
           .append('svg')
@@ -31,6 +43,9 @@ squidApp.directive('d3piechart', function() {
           .append('g')
           .attr('transform', "translate(" + width / 2 + "," + height / 2 + ")");
 
+      // apply tool tip
+      svg.call(tip);
+
       var arcElement = svg.selectAll(".arc")
             .data(pie(scope.data))
             .enter()
@@ -39,7 +54,9 @@ squidApp.directive('d3piechart', function() {
       
       arcElement.append('path')
          .attr('d', arc) 
-         .style('fill', function(d, i) { return color(i); });
+         .style('fill', function(d, i) { return color(i); })
+         .on('mouseover', tip.show)
+         .on('mouseout', tip.hide);
     }
   };
 });
