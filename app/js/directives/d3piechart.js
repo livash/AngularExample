@@ -13,7 +13,7 @@ squidApp.directive('d3piechart', function() {
     },
     link: function(scope, element, attrs) {
       var color = d3.scale.ordinal()
-          .range(['#3366cc', '#109618', '#990099', '#ff9900', '#dc3912', 'pink']);
+          .range(['#3366cc', '#109618', '#990099', '#ff9900', '#dc3912','#ffff99', 'pink', '#7f7f00', '#00e577', ' #e77719']);
       var arc = d3.svg.arc()
           .outerRadius(radius - 10)
           .innerRadius(0);
