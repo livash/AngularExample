@@ -19,7 +19,7 @@ h2 {
     padding-left: 20px;
 }
 
-.d3-tip-column {
+.d3-tip-column, .d3-tip-pie {
   background-color: #fff;
   border: 1px solid #888;
   padding: 5px;

@@ -2,7 +2,8 @@ squidApp.directive('d3piechart', function() {
   // defaults
   var width = 500,
       height = 500,
-      radius = Math.min(width, height) / 2;
+      radius = Math.min(width, height) / 2
+      margin = 25;
   
   return {
     restrict: "E",
@@ -15,7 +16,7 @@ squidApp.directive('d3piechart', function() {
       var color = d3.scale.ordinal()
           .range(['#3366cc', '#109618', '#990099', '#ff9900', '#dc3912','#ffff99', 'pink', '#7f7f00', '#00e577', ' #e77719']);
       var arc = d3.svg.arc()
-          .outerRadius(radius - 10)
+          .outerRadius(radius - margin)
           .innerRadius(0);
       
       var pie = d3.layout.pie()
@@ -24,15 +25,15 @@ squidApp.directive('d3piechart', function() {
 
       // use external library for tootips in d3, called d3.tip
       var tip = d3.tip()
-              .attr('class', 'd3-tip-column')
-              .attr('fill', '#ddd')
-              //.offset([-10, 0])
-              .offset(function() {
-                return [this.getBBox().height / 2, 0];
-              })
-              .html(function(d, i) {
-                return "<strong>Value: </strong><span style='color: red;'>" + d.data.y + "</span>"; 
-              });
+            .attr('class', 'd3-tip-pie')
+            .attr('fill', '#ddd')
+            //.offset([-10, 0])
+            .offset(function() {
+              return [this.getBBox().height / 2, 0];
+            })
+            .html(function(d, i) {
+              return "<strong>Value: </strong><span style='color: red;'>" + d.data.y + "</span>"; 
+            });
       
       var svg = d3.select('.d3-chart')
           .append('svg')
