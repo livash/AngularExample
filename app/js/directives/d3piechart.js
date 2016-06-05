@@ -3,21 +3,28 @@ squidApp.directive('d3piechart', function() {
   var width = 500,
       height = 500,
       radius = Math.min(width, height) / 2
-      margin = 25;
+      margin = 25,
+      innerRadius = 0;
   
   return {
     restrict: "E",
     replace: true,
     templateUrl: 'templates/directives/d3chart.html',
     scope: {
-      data: '='
+      data: '=',
+      donut: '='
     },
     link: function(scope, element, attrs) {
       var color = d3.scale.ordinal()
           .range(['#3366cc', '#109618', '#990099', '#ff9900', '#dc3912','#ffff99', 'pink', '#7f7f00', '#00e577', ' #e77719']);
+ 
+      // pie versus donut
+      if (scope.donut === true) 
+        innerRadius = (radius - margin) / 2;
+    
       var arc = d3.svg.arc()
           .outerRadius(radius - margin)
-          .innerRadius(0);
+          .innerRadius(innerRadius);
       
       var pie = d3.layout.pie()
           .sort(null)
