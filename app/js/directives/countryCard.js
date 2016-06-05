@@ -7,5 +7,5 @@ squidApp.directive('countryCard', function() {
         scope: {
             country: "="
         }
-    } 
+    }; 
 });

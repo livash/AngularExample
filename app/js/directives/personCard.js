@@ -8,5 +8,5 @@ squidApp.directive('personCard', function() {
         scope: {
             person: '=person'
         }
-    } 
+    };
 });

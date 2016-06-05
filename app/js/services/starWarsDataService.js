@@ -6,7 +6,7 @@ squidApp.factory('starWarsDataService', ['$http', function($http) {
 
     starWarsDataService.getAllPeople = function () {
         return $http.get(urlBase + 'people?format=json');
-    }
+    };
 
     return starWarsDataService;
 }]);

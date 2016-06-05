@@ -2,9 +2,7 @@
 
 squidApp.controller('starWarsController',
     function starWarsController($scope, starWarsDataService) {
-        $scope.people;
-        $scope.status;
-        $scope.description = 'Data from STAR WARS API https://swapi.co/'
+        $scope.description = 'Data from STAR WARS API https://swapi.co/';
 
         getPeople();
 

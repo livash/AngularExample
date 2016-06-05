@@ -22,5 +22,5 @@ squidApp.controller('d3ExamplesController',
           top: 35,
           right: 25,
           bottom: 25
-        }
+        };
 });

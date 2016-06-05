@@ -10,8 +10,8 @@ squidApp.directive('d3column', function() {
         top: 50,
         right: 25,
         bottom: 25
-      }
-      
+      };
+
   // method returns an object with sorted arrays of X and Y values    
   var getSortedArrays = function(data) {
     var xVals = [],
@@ -27,7 +27,7 @@ squidApp.directive('d3column', function() {
       yVals: _.sortBy(yVals, function(y) { return y; })
     };
   };
-  
+
   return {
     restrict: 'E',
     replace: true,
@@ -36,26 +36,26 @@ squidApp.directive('d3column', function() {
       data: '='
     },
     link: function(scope, element, attrs) {
-      
+
       var barWidth = Math.floor( (width - margin.left - margin.right) / scope.data.length) - spacing;
       var sorted = getSortedArrays(scope.data);
       var yScale = d3.scale.linear()
               .domain([sorted.yVals[0], sorted.yVals[sorted.yVals.length - 1]])
               .range([(height - margin.top - margin.bottom), 0]);
-      
+
       // create svg for the chart
       var svg = d3.select('.d3-chart')
               .append("svg")
               .attr({ width: width, height: height})
               .attr('class', 'd3-column-chart')
               .style('background-color', '#5EFB6E');
-      
+
       svg.append('text')
           .attr('class', 'd3-column-chart-title')
           .attr('x', margin.left)
           .attr('y', margin.top - 25)
           .text('Hover over columns');
-      
+
       // all chart element are inside a group element
       // it is used to apply margin to all elements of the chart
       var g = svg.append('g')
@@ -69,7 +69,7 @@ squidApp.directive('d3column', function() {
               .html(function(d, i) {
                 return "<strong>Value: </strong><span style='color: red;'>" + d.y + "</span>"; 
               });
-     
+
      // apply tooltip
      g.call(tip);
 
@@ -84,7 +84,7 @@ squidApp.directive('d3column', function() {
           .attr('height', function(d, i) { return height - yScale(d.y) - margin.bottom; })
           .attr('class', 'd3-column')
           .on('mouseover', tip.show)
-          .on('mouseout', tip.hide); 
+          .on('mouseout', tip.hide);
     }
-  }
+  };
 });

@@ -25,5 +25,5 @@ squidApp.controller('capitalsController',
 
         $scope.showCapital = function(event, name) {
             $(event.currentTarget).text(name);
-        }
+        };
 });

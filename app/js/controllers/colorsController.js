@@ -11,13 +11,13 @@ squidApp.controller('colorsController',
 
         $scope.showColorName = function($event, name) {
             $($event.currentTarget).toggleClass('no-text');
-        }
+        };
 
         $scope.shuffleColors = function() {
             $scope.colors = _.shuffle($scope.colors);
-        }
-        
+        };
+
         $scope.removeColorNames = function() {
             $('.color-box').addClass('no-text');
-        }
+        };
 });

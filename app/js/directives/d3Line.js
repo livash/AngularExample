@@ -4,7 +4,7 @@ squidApp.directive('d3line', function() {
   // default values
   var height = 100,
       width = 400;
-  
+
   // method returns an object with sorted arrays of X and Y values    
   var getSortedArrays = function(data) {
     var xVals = [],
@@ -14,13 +14,13 @@ squidApp.directive('d3line', function() {
       xVals.push(el.x);
       yVals.push(el.y);
     });
-    
+
     return {
       xVals: _.sortBy(xVals, function(x) { return x; }),
       yVals: _.sortBy(yVals, function(y) { return y; })
     };
   };
-  
+
   var getMargin = function(margin) {
       return {
         left: !!(margin) ? margin.left : 0,
@@ -45,14 +45,14 @@ squidApp.directive('d3line', function() {
       var margin = getMargin(scope.margin);
       var w = scope.width ? scope.width : width;
       var h = scope.height ? scope.height: height;
-      
+    
       var xScale = d3.scale.linear()
                   .domain([sorted.xVals[0], sorted.xVals[sorted.xVals.length - 1]])
                   .range([0, (w - margin.left - margin.right)]);
       var yScale = d3.scale.linear()
                   .domain([sorted.yVals[0], sorted.yVals[sorted.yVals.length - 1]])
                   .range([(h - margin.top - margin.bottom), 0]);
-      
+
       var lineFun = d3.svg.line()
          .x(function(d) { return xScale(d.x); })
          .y(function(d) { return yScale(d.y); })
@@ -94,7 +94,7 @@ squidApp.directive('d3line', function() {
              }
            }
          });
-         
+       
         // add circles
        var circles = g.selectAll("circle")
          .data(scope.data)
