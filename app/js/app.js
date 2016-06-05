@@ -32,5 +32,5 @@ var squidApp = angular.module('squidApp', ['ngRoute'])
                 controller: 'd3ExamplesController'
             }
         );
-        $routeProvider.otherwise({redirectTo: '/starwars'});
+        $routeProvider.otherwise({redirectTo: '/d3'});
 });
