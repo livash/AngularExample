@@ -31,7 +31,7 @@ squidApp.directive('d3line', function() {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: '/templates/directives/d3chart.html',
+    template: '<div class="d3-chart line-chart"></div>',
     scope: {
       data: '=',
       width: '=',

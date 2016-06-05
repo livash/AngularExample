@@ -9,7 +9,7 @@ squidApp.directive('d3piechart', function() {
   return {
     restrict: "E",
     replace: true,
-    templateUrl: 'templates/directives/d3chart.html',
+    template: '<div class="d3-chart pie-chart"></div>',
     scope: {
       data: '=',
       donut: '='
@@ -42,7 +42,7 @@ squidApp.directive('d3piechart', function() {
               return "<strong>Value: </strong><span style='color: red;'>" + d.data.y + "</span>"; 
             });
       
-      var svg = d3.select('.d3-chart')
+      var svg = d3.select('.d3-chart.pie-chart')
           .append('svg')
           .attr('width', width)
           .attr('height', height)

@@ -29,7 +29,7 @@ squidApp.directive('d3column', function() {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: 'templates/directives/d3chart.html',
+    template: '<div class="d3-chart column-chart"></div>',
     scope: {
       data: '='
     },
@@ -42,7 +42,7 @@ squidApp.directive('d3column', function() {
               .range([(height - margin.top - margin.bottom), 0]);
 
       // create svg for the chart
-      var svg = d3.select('.d3-chart')
+      var svg = d3.select('.d3-chart.column-chart')
               .append("svg")
               .attr({ width: width, height: height})
               .attr('class', 'd3-column-chart')
