@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.directive('countryCard', function() {
     return {
         restrict: 'C',

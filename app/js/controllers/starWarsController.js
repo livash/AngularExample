@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.controller('starWarsController',
     function starWarsController($scope, starWarsDataService) {
         $scope.description = 'Data from STAR WARS API https://swapi.co/';

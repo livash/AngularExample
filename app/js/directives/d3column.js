@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.directive('d3column', function() {
   // defaults
   var width = 600,

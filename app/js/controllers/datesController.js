@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.controller('datesController',
     function starWarsController($scope) {
         $scope.description = 'Example of using filters for formatting dates.';

@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.directive('d3line', function() {
   // default values
   var height = 100,

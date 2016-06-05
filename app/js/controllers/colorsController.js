@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.controller('colorsController',
     function colorsController($scope) {
         var colors = ['red', 'green', 'blue', 'yellow', 'pink', 'brown', 'cyan', 'purple', 'grey', 'white', 'skyblue', 'gold', 'olive', 'crimson', 'darkcyan', 'darkgreen', 'darkred'];

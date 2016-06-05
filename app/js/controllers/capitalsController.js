@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.controller('capitalsController',
     function capitalsController($scope) {
         var data = [

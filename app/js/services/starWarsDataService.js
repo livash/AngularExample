@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.factory('starWarsDataService', ['$http', function($http) {
     var urlBase = 'http://swapi.co/api/';
     var starWarsDataService = {};

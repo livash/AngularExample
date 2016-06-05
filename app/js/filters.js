@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.filter('momentFormatDate', function () {
    return function (dateString) {
        return moment(dateString, 'YYYYMMDD').fromNow();

@@ -1,5 +1,3 @@
-'use strict';
-
 squidApp.directive('personCard', function() {
     return {
         restrict: 'E',
