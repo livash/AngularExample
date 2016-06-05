@@ -101,6 +101,7 @@ squidApp.directive('d3line', function() {
          .attr({
            cx: function(d) {return xScale(d.x); },
            cy: function(d) {return yScale(d.y);},
+           class: 'd3-line-data-circle',
            r: 5,
            stroke: "#333",
            fill: '#fff'

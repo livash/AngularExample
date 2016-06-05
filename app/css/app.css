@@ -40,3 +40,7 @@ h2 {
 .d3-column:hover {
   fill: orange;
 }
+
+.d3-line-data-circle:hover {
+  fill: green;
+}
