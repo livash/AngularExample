@@ -26,6 +26,10 @@ h2 {
   color: #555;
 }
 
+.d3-chart.column-chart {
+  margin-bottom: 20px;
+}
+
 .d3-column-chart-title {
   font-size: 14px;
   font-weight: normal;

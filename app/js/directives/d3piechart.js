@@ -2,7 +2,6 @@ squidApp.directive('d3piechart', function() {
   // defaults
   var width = 500,
       height = 500,
-      radius = Math.min(width, height) / 2
       margin = 25,
       innerRadius = 0;
   
@@ -12,9 +11,15 @@ squidApp.directive('d3piechart', function() {
     template: '<div class="d3-chart pie-chart"></div>',
     scope: {
       data: '=',
-      donut: '='
+      donut: '=',
+      width: '=',
+      height: '='
     },
     link: function(scope, element, attrs) {
+      width = !!(scope.width) ? scope.width : width;
+      height = !!(scope.height) ? scope.height : height;
+      var radius = Math.min(width, height) / 2;
+      
       var color = d3.scale.ordinal()
           .range(['#3366cc', '#109618', '#990099', '#ff9900', '#dc3912','#ffff99', 'pink', '#7f7f00', '#00e577', ' #e77719']);
  

@@ -31,9 +31,13 @@ squidApp.directive('d3column', function() {
     replace: true,
     template: '<div class="d3-chart column-chart"></div>',
     scope: {
-      data: '='
+      data: '=',
+      width: '=',
+      height: '='
     },
     link: function(scope, element, attrs) {
+      width = !!(scope.width) ? scope.width : width;
+      height = !!(scope.height) ? scope.height : height;
 
       var barWidth = Math.floor( (width - margin.left - margin.right) / scope.data.length) - spacing;
       var sorted = getSortedArrays(scope.data);

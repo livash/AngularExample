@@ -56,7 +56,7 @@ squidApp.directive('d3line', function() {
          .y(function(d) { return yScale(d.y); })
          .interpolate("linear");
 
-      var svg = d3.select(".d3-chart")
+      var svg = d3.select(".d3-chart.line-chart")
                    .append("svg")
                    .attr({ width: w, height: h })
                    .style("background-color", "pink")
