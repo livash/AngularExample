@@ -4,7 +4,7 @@ squidApp.directive('personCard', () => {
         replace: true,
         templateUrl: '/templates/directives/personCard.html',
         scope: {
-            person: '=person'
+            person: '='
         }
     };
 });

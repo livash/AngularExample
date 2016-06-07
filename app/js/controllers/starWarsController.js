@@ -1,15 +1,10 @@
 squidApp.controller('starWarsController',
-    function starWarsController($scope, starWarsDataService) {
-        $scope.description = 'Data from STAR WARS API https://swapi.co/';
+  function starWarsController($scope, starWarsDataService) {
+    $scope.description = 'Data from STAR WARS API https://swapi.co/';
+    
+    let success = (response) => $scope.people = response.data.results;
+    let failure = (error) => $scope.status = 'Unable to retreive data';
+    let getPeople = () => starWarsDataService.getAllPeople().then(success, failure);
 
-        getPeople();
-
-        function getPeople() {
-            starWarsDataService.getAllPeople()
-                .then(function (response) {
-                    $scope.people = response.data.results;
-                }, function (error) {
-                    $scope.status = 'Unable to retreive data';
-            });
-        }
+    getPeople();
 });
