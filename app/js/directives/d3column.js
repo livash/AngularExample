@@ -1,4 +1,4 @@
-squidApp.directive('d3column', function() {
+squidApp.directive('d3column', () => {
   // defaults
   var width = 600,
       height = 200,
@@ -11,7 +11,7 @@ squidApp.directive('d3column', function() {
       };
 
   // method returns an object with sorted arrays of X and Y values    
-  var getSortedArrays = function(data) {
+  var getSortedArrays = (data) => {
     var xVals = [],
         yVals = [];
 
@@ -35,7 +35,7 @@ squidApp.directive('d3column', function() {
       width: '=',
       height: '='
     },
-    link: function(scope, element, attrs) {
+    link: (scope, element, attrs) => {
       width = !!(scope.width) ? scope.width : width;
       height = !!(scope.height) ? scope.height : height;
 

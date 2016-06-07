@@ -1,4 +1,4 @@
-squidApp.directive('d3piechart', function() {
+squidApp.directive('d3piechart', () => {
   // defaults
   var width = 500,
       height = 500,
@@ -15,7 +15,7 @@ squidApp.directive('d3piechart', function() {
       width: '=',
       height: '='
     },
-    link: function(scope, element, attrs) {
+    link: (scope, element, attrs) => {
       width = !!(scope.width) ? scope.width : width;
       height = !!(scope.height) ? scope.height : height;
       var radius = Math.min(width, height) / 2;
@@ -40,12 +40,8 @@ squidApp.directive('d3piechart', function() {
             .attr('class', 'd3-tip-pie')
             .attr('fill', '#ddd')
             //.offset([-10, 0])
-            .offset(function() {
-              return [this.getBBox().height / 2, 0];
-            })
-            .html(function(d, i) {
-              return `<strong>Value: </strong><span style='color: red;'>${d.data.y}</span>`; 
-            });
+            .offset( () => [this.getBBox().height / 2, 0] )
+            .html((d, i) => `<strong>Value: </strong><span style='color: red;'>${d.data.y}</span>`);
       
       var svg = d3.select('.d3-chart.pie-chart')
           .append('svg')
