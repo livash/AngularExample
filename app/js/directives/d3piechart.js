@@ -33,7 +33,7 @@ squidApp.directive('d3piechart', function() {
       
       var pie = d3.layout.pie()
           .sort(null)
-          .value(function(d, i) { return d.y; });
+          .value((d, i) => d.y);
 
       // use external library for tootips in d3, called d3.tip
       var tip = d3.tip()
@@ -44,7 +44,7 @@ squidApp.directive('d3piechart', function() {
               return [this.getBBox().height / 2, 0];
             })
             .html(function(d, i) {
-              return "<strong>Value: </strong><span style='color: red;'>" + d.data.y + "</span>"; 
+              return `<strong>Value: </strong><span style='color: red;'>${d.data.y}</span>`; 
             });
       
       var svg = d3.select('.d3-chart.pie-chart')
@@ -54,7 +54,7 @@ squidApp.directive('d3piechart', function() {
           .attr('class', 'd3-pie-chart')
           .attr('fill', '#fff')
           .append('g')
-          .attr('transform', "translate(" + width / 2 + "," + height / 2 + ")");
+          .attr('transform', `translate(${width/2}, ${height/2})`);
 
       // apply tool tip
       svg.call(tip);
@@ -67,7 +67,7 @@ squidApp.directive('d3piechart', function() {
       
       arcElement.append('path')
          .attr('d', arc) 
-         .style('fill', function(d, i) { return color(i); })
+         .style('fill', (d, i) => color(i))
          .on('mouseover', tip.show)
          .on('mouseout', tip.hide);
     }
