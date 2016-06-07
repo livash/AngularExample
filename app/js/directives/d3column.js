@@ -15,14 +15,14 @@ squidApp.directive('d3column', function() {
     var xVals = [],
         yVals = [];
 
-    data.forEach(function(el, i) {
+    data.forEach((el, i) => {
       xVals.push(el.x);
       yVals.push(el.y);
     });
 
     return {
-      xVals: _.sortBy(xVals, function(x) { return x; }),
-      yVals: _.sortBy(yVals, function(y) { return y; })
+      xVals: _.sortBy(xVals, (x) => x),
+      yVals: _.sortBy(yVals, (y) => y)
     };
   };
 
@@ -61,16 +61,14 @@ squidApp.directive('d3column', function() {
       // all chart element are inside a group element
       // it is used to apply margin to all elements of the chart
       var g = svg.append('g')
-              .attr('transform', "translate(" + margin.left + "," + margin.top + ")");
+              .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
       // use an external library for tootips in d3, called d3.tip
       var tip = d3.tip()
               .attr('class', 'd3-tip-column')
               .attr('fill', '#ddd')
               .offset([-10, 0])
-              .html(function(d, i) {
-                return "<strong>Value: </strong><span style='color: red;'>" + d.y + "</span>"; 
-              });
+              .html((d, i) => `<strong>Value: </strong><span style='color: red;'>${d.y}</span>`);
 
      // apply tooltip
      g.call(tip);
@@ -80,10 +78,10 @@ squidApp.directive('d3column', function() {
         .data(scope.data)
         .enter()
         .append('rect')
-          .attr('x', function(d, i) { return i* ((width - margin.left - margin.right) / scope.data.length); })
-          .attr('y', function(d, i) { return yScale(d.y); })
+          .attr('x', (d, i) => i * ((width - margin.left - margin.right) / scope.data.length))
+          .attr('y', (d, i) => yScale(d.y))
           .attr('width', barWidth)
-          .attr('height', function(d, i) { return height - yScale(d.y) - margin.bottom; })
+          .attr('height', (d, i) => height - yScale(d.y) - margin.bottom)
           .attr('class', 'd3-column')
           .on('mouseover', tip.show)
           .on('mouseout', tip.hide);
