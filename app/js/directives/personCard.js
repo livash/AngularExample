@@ -1,4 +1,4 @@
-squidApp.directive('personCard', function() {
+squidApp.directive('personCard', () => {
     return {
         restrict: 'E',
         replace: true,
