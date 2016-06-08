@@ -32,5 +32,12 @@ var squidApp = angular.module('squidApp', ['ngRoute'])
                 controller: 'd3ExamplesController'
             }
         );
+        
+        $routeProvider.when('/d3maps',
+            {
+              templateUrl: 'templates/d3Maps.html',
+              controller: 'd3MapsController'
+            }
+        );
         $routeProvider.otherwise({redirectTo: '/d3'});
 });
