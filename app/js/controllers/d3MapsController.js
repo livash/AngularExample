@@ -20,6 +20,8 @@ squidApp.controller('d3MapsController',
       var path = d3.geo.path()
           .projection(projection);
       
+      // add subunits as separate path elements
+      // and asign to them class based on sunbunit.id (ENG, IRL, etc.)
       svg.selectAll('.subunit')
           .data(subunits)
           .enter()
@@ -27,10 +29,27 @@ squidApp.controller('d3MapsController',
           .attr('class', (d) => `subunit ${d.id}`)
           .attr('d', path);
 
+      // add boundary to each subunit by applying CSS class
       svg.append('path')
           .datum(topojson.mesh(ukMap, ukMap.objects.subunits))
           .attr('d', path)
           .attr('class', 'subunit-boundary');
+
+      // add display for cities / places
+      svg.select('path')
+          .datum(topojson.feature(ukMap, ukMap.objects.places))
+          .attr('d', path)
+          .attr('class', 'place');
+      
+      // add label for each city / place
+      svg.selectAll('.place-label')
+          .data(topojson.feature(ukMap, ukMap.objects.places).features)
+          .enter()
+          .append('text')
+          .attr('class', 'place-label')
+          .attr('transform', (d) => `translate(${ projection(d.geometry.coordinates) })` )
+          .attr('dy', '1em')
+          .text( (d) => d.properties.name );
     });
   
 });
