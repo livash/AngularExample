@@ -24,8 +24,13 @@ squidApp.controller('d3MapsController',
           .data(subunits)
           .enter()
           .append('path')
-          .attr('class', function(d) { return "subunit " + d.id; })
+          .attr('class', (d) => `subunit ${d.id}`)
           .attr('d', path);
+
+      svg.append('path')
+          .datum(topojson.mesh(ukMap, ukMap.objects.subunits))
+          .attr('d', path)
+          .attr('class', 'subunit-boundary');
     });
   
 });

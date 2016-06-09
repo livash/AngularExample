@@ -68,4 +68,9 @@ h2 {
 }
 .subunit.IRL { 
     fill: #fcc; 
-  }
+}
+.subunit-boundary {
+  fill: none;
+  stroke: #777;
+  stroke-linejoin: round;
+}
