@@ -52,3 +52,20 @@ h2 {
 .d3-line-data-circle:hover {
   fill: green;
 }
+
+/* country colors */
+.subunit.SCT { 
+  fill: #fcf; 
+}
+.subunit.WLS { 
+  fill: #cdd;
+}
+.subunit.NIR { 
+  fill: #9ff;
+}
+.subunit.ENG { 
+    fill: #ff9;
+}
+.subunit.IRL { 
+    fill: #fcc; 
+  }
