@@ -54,6 +54,18 @@ squidApp.controller('d3MapsController',
           .attr('x', d => d.geometry.coordinates[0] > -1 ? 7 : -7 )
           .text( d => d.properties.name )
           .style('font-size', '12px');
+
+      svg.selectAll('.subunit-labelZZZ')
+        .data(topojson.feature(ukMap, ukMap.objects.subunits).features)
+        .enter()
+        .append('text')
+        .attr('class', d => `subunit-label ${d.id}`)
+        .attr('transform', d => `translate(${path.centroid(d)})`)
+        .attr('dy', '.5em')
+        .text(d => d.properties.name)
+        .style('font-size', '20px')
+        .style('text-anchor', 'middle')
+        .style('fill', '#888');
       
     });
   
