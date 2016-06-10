@@ -26,7 +26,7 @@ squidApp.controller('d3MapsController',
           .data(subunits)
           .enter()
           .append('path')
-          .attr('class', (d) => `subunit ${d.id}`)
+          .attr('class', d => `subunit ${d.id}`)
           .attr('d', path);
 
       // add boundary to each subunit by applying CSS class
@@ -36,10 +36,12 @@ squidApp.controller('d3MapsController',
           .attr('class', 'subunit-boundary');
 
       // add display for cities / places
-      svg.select('path')
+      var placesPath = path.pointRadius([3]);
+      svg.append('path')
           .datum(topojson.feature(ukMap, ukMap.objects.places))
-          .attr('d', path)
-          .attr('class', 'place');
+          .attr('d', placesPath)
+          .attr('class', 'place')
+          .style('fill', '#444');
       
       // add label for each city / place
       svg.selectAll('.place-label')
@@ -47,9 +49,12 @@ squidApp.controller('d3MapsController',
           .enter()
           .append('text')
           .attr('class', 'place-label')
-          .attr('transform', (d) => `translate(${ projection(d.geometry.coordinates) })` )
+          .attr('transform', d => `translate(${ projection(d.geometry.coordinates) })` )
           .attr('dy', '1em')
-          .text( (d) => d.properties.name );
+          .attr('x', d => d.geometry.coordinates[0] > -1 ? 7 : -7 )
+          .text( d => d.properties.name )
+          .style('font-size', '12px');
+      
     });
   
 });
