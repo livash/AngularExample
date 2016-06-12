@@ -82,3 +82,7 @@ h2 {
 .state {
   fill: #FFFF51; // Ruber Ducky Yellow
 }
+
+.state:hover {
+  fill:#5252FF;
+}
