@@ -13,7 +13,11 @@
     "gulp-concat-util": "^0.5.5",
     "gulp-jshint": "^2.0.1",
     "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.4.1",
     "jshint": "^2.9.2",
-    "jshint-stylish": "^2.2.0"
+    "jshint-stylish": "^2.2.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2"
   }
 }
