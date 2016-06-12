@@ -1,6 +1,6 @@
 squidApp.controller('d3MapUSController', 
   function d3USMapController($scope) {
-    $scope.title = "Map of the United States";
+    $scope.title = "Interactive Map of the United States";
     
     const width = 1000,
           height = 600;
@@ -11,9 +11,7 @@ squidApp.controller('d3MapUSController',
             .attr('height', height)
             .style('background-color', '#fff');
 
-    d3.json('../../content/us-states-10m.json', function(error, usMap) {
-      if (error) return console.log(error);
-
+    var drawMap = (usMap, stateDetails) => {
       // select all states from JSON
       var states = topojson.feature(usMap, usMap.objects.states).features;
 
@@ -31,7 +29,10 @@ squidApp.controller('d3MapUSController',
           .attr('class', 'state-name-tip')
           .attr('fill', '#ddd')
           .offset([0,0])
-          .html((d, i) => `State number ${d.id}`);
+          .html((d, i) => {
+            var state = stateDetails.states.find( obj => obj.id === d.id);
+            return state.name;
+          });
 
       svg.call(tip);
  
@@ -62,5 +63,17 @@ squidApp.controller('d3MapUSController',
           .text( d => d.id )
           .style('font-size', '14px')
           .style('fill', 'transparent');
+    };
+
+    // load two data files and draw the map
+    d3.json('../../content/us-states-10m.json', function (error, usMap) {
+      if (error) return console.log(error);
+
+      d3.json('../../content/us-state-details.json', function (err, stateDetails) {
+        if (err) return console.log(err);
+        
+        drawMap(usMap, stateDetails);
+      });
+
     });
 });
