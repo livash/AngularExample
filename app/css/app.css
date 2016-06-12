@@ -69,16 +69,16 @@ h2 {
 .subunit.IRL { 
     fill: #fcc; 
 }
-.subunit-boundary, .county-boundary {
+.subunit-boundary, .state-boundary {
   fill: none;
   stroke: #777;
   stroke-linejoin: round;
 }
 
-.county-boundary {
+.state-boundary {
   stroke: maroon;
 }
 
-.county {
+.state {
   fill: #FFFF51; // Ruber Ducky Yellow
 }
