@@ -3,7 +3,7 @@ squidApp.controller('d3MapUSController',
     $scope.title = "Map of the United States";
     
     const width = 1000,
-          height = 800;
+          height = 600;
           
     var svg = d3.select('.map-us')
             .append('svg')
@@ -19,8 +19,8 @@ squidApp.controller('d3MapUSController',
 
       // assign projection properties
       var projection = d3.geo.mercator()
-          .scale(450)
-          .translate([width +450, height + 50]);
+          .scale(900)
+          .translate([width + 1000, height + 350]);
 
       // create path element using projection
       var path = d3.geo.path()
