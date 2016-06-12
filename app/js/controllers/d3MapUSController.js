@@ -25,6 +25,15 @@ squidApp.controller('d3MapUSController',
       // create path element using projection
       var path = d3.geo.path()
           .projection(projection);
+
+      //add tooltips showing the ID (and lateron name) of each state
+      var tip = d3.tip()
+          .attr('class', 'state-name-tip')
+          .attr('fill', '#ddd')
+          .offset([0,0])
+          .html((d, i) => `State number ${d.id}`);
+
+      svg.call(tip);
  
       // draw states
       svg.selectAll('.state')
@@ -32,21 +41,26 @@ squidApp.controller('d3MapUSController',
           .enter()
           .append('path')
           .attr('class', d => `state ${d.id}`)
-          .attr('d', path);
-
-      // add tooltips showing the ID (and lateron name) of each state
-      var tip = d3.tip()
-          .attr('class', 'state-name-tip')
-          .attr('fill', '#ddd')
-          .offset([-10,0])
-          .html((d, i) => {console.log(d); return `State number ${d.id}`});
-
-      svg.call(tip);
+          .attr('d', path)
+          .on('mouseover', tip.show)
+          .on('mouseleave', tip.hide);
 
       // draw state boundaries
       svg.append('path')
         .datum(topojson.mesh(usMap, usMap.objects.states))
         .attr('d', path)
         .attr('class', 'state-boundary');
+        
+      // add label for each state
+      svg.selectAll('.state-label')
+          .data(states)
+          .enter()
+          .append('text')
+          .attr('class', 'state-label')
+          .attr('transform', d => `translate(${ projection(d.geometry.coordinates[0][0][0]) })`)
+          .attr('dy', '2em')
+          .text( d => d.id )
+          .style('font-size', '14px')
+          .style('fill', 'transparent');
     });
 });

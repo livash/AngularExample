@@ -1,0 +1,252 @@
+{
+  "states": [
+    { 
+      "name": "Alabama"
+      ,"capital": ""
+      ,"id": 1
+    }
+    ,{
+      "name": "Alaska"
+      ,"capital": ""
+    }
+    ,{
+      "name": "Arizona"
+      ,"capital": ""
+      ,"id": 4
+    }
+    ,{
+      "name": "Arkansas"
+      ,"capital": ""
+      ,"id": 5
+    }
+    ,{
+      "name": "California"
+      ,"capital": ""
+      ,"id": 6
+    }
+    ,{
+      "name": "Colorado"
+      ,"capital": ""
+      ,"id": 8
+    }
+    ,{
+      "name": "Connecticut"
+      ,"capital": ""
+      ,"id": 9
+    }
+    ,{
+      "name": "Delaware"
+      ,"capital": ""
+      ,"id": 10
+    }
+    ,{
+      "name": "Florida"
+      ,"capital": ""
+      ,"id": 12
+    }
+    ,{
+      "name": "Georgia"
+      ,"capital": ""
+      ,"id": 13
+    }
+    ,{
+      "name": "Hawaii"
+      ,"capital": ""
+    }
+    ,{
+      "name": "Idaho"
+      ,"capital": ""
+      ,"id": 16
+    }
+    ,{
+      "name": "Illinois"
+      ,"capital": ""
+      ,"id": 17
+    }
+    ,{
+      "name": "Indiana"
+      ,"capital": ""
+      ,"id": 18
+    }
+    ,{
+      "name": "Iowa"
+      ,"capital": ""
+      ,"id": 19
+    }
+    ,{
+      "name": "Kansas"
+      ,"capital": ""
+      ,"id": 20
+    }
+    ,{
+      "name": "Kentucky"
+      ,"capital": ""
+      ,"id": 21
+    }
+    ,{
+      "name": "Louisiana"
+      ,"capital": ""
+      ,"id": 22
+    }
+    ,{
+      "name": "Maine"
+      ,"capital": ""
+      ,"id": 23
+    }
+    ,{
+      "name": "Maryland"
+      ,"capital": ""
+      ,"id": 24
+    }
+    ,{
+      "name": "Massachusetts"
+      ,"capital": ""
+      ,"id": 25
+    }
+    ,{
+      "name": "Michigan"
+      ,"capital": ""
+      ,"id": 26
+    }
+    ,{
+      "name": "Minnesota"
+      ,"capital": ""
+      ,"id": 27
+    }
+    ,{
+      "name": "Mississippi"
+      ,"capital": ""
+      ,"id": 28
+    }
+    ,{
+      "name": "Missouri"
+      ,"capital": ""
+      ,"id": 29
+    }
+    ,{
+      "name": "Montana"
+      ,"capital": ""
+      ,"id": 30
+    }
+    ,{
+      "name": "Nebraska"
+      ,"capital": ""
+      ,"id": 31
+    }
+    ,{
+      "name": "Nevada"
+      ,"capital": ""
+      ,"id": 32
+    }
+    ,{
+      "name": "New Hampshire"
+      ,"capital": ""
+      ,"id": 33
+    }
+    ,{
+      "name": "New Jersey"
+      ,"capital": ""
+      ,"id": 34
+    }
+    ,{
+      "name": "New Mexico"
+      ,"capital": ""
+      ,"id": 35
+    }
+    ,{
+      "name": "New York"
+      ,"capital": ""
+      ,"id": 36
+    }
+    ,{
+      "name": "North Carolina"
+      ,"capital": ""
+      ,"id": 37
+    }
+    ,{
+      "name": "North Dakota"
+      ,"capital": ""
+      ,"id": 38
+    }
+    ,{
+      "name": "Ohio"
+      ,"capital": ""
+      ,"id": 39
+    }
+    ,{
+      "name": "Oklahoma"
+      ,"capital": ""
+      ,"id": 40
+    }
+    ,{
+      "name": "Oregon"
+      ,"capital": ""
+      ,"id": 41
+    }
+    ,{
+      "name": "Pennsylvania"
+      ,"capital": ""
+      ,"id": 42
+    }
+    ,{
+      "name": "Rhode Island"
+      ,"capital": ""
+      ,"id": 44
+    }
+    ,{
+      "name": "South Carolina"
+      ,"capital": ""
+      ,"id": 45
+    }
+    ,{
+      "name": "South Dakota"
+      ,"capital": ""
+      ,"id": 46
+    }
+    ,{
+      "name": "Tennessee"
+      ,"capital": ""
+      ,"id": 47
+    }
+    ,{
+      "name": "Texas"
+      ,"capital": ""
+      ,"id": 48
+    }
+    ,{
+      "name": "Utah"
+      ,"capital": ""
+      ,"id": 49
+    }
+    ,{
+      "name": "Vermont"
+      ,"capital": ""
+      ,"id": 50
+    }
+    ,{
+      "name": "Virginia"
+      ,"capital": ""
+      ,"id": 51
+    }
+    ,{
+      "name": "Washington"
+      ,"capital": ""
+      ,"id": 53
+    }
+    ,{
+      "name": "West Virginia"
+      ,"capital": ""
+      ,"id": 54
+    }
+    ,{
+      "name": "Wisconsin"
+      ,"capital": ""
+      ,"id": 55
+    }
+    ,{
+      "name": "Wyoming"
+      ,"capital": ""
+      ,"id": 56
+    }
+  ]
+}
