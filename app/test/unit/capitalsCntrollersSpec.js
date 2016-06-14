@@ -6,7 +6,7 @@ describe('capitalsController', function(){
   beforeEach(inject(function($controller, $rootScope) {
     $controllerConstructor = $controller;
     scope = $rootScope.$new();
-  }))
+  }));
 
   it('should set the scope.countries to an array for four countries', function() {
     var ctrl = $controllerConstructor('capitalsController', {$scope: scope});
