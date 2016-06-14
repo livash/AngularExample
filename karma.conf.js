@@ -8,6 +8,7 @@ module.exports = function(config) {
     files: [
       'lib/angular/angular.js',
       'lib/angular/angular-*.js',
+      'lib/underscore-1.4.4.min.js',
       'js/**/*.js',
       'test/**/*.js'
     ],
