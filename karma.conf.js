@@ -4,7 +4,7 @@
 module.exports = function(config) {
   config.set({
     basePath: './app',
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'jasmine-sinon'],
     files: [
       'lib/angular/angular.js',
       'lib/angular/angular-*.js',
