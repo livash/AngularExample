@@ -9,6 +9,7 @@ module.exports = function(config) {
       'lib/angular/angular.js',
       'lib/angular/angular-*.js',
       'lib/underscore-1.4.4.min.js',
+      'lib/moment-2.13.0.min.js',
       'js/**/*.js',
       'test/**/*.js'
     ],
