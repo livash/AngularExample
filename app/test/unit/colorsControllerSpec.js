@@ -1,5 +1,5 @@
 describe('colorsController', function(){
-  var $controllerConstructor, scope
+  var $controllerConstructor, scope;
 
   beforeEach(module('squidApp'));
 
