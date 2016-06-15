@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint')
     concat = require('gulp-concat-util')
-    Server = require('karma').Server;
+    Server = require('karma').Server,
+    merge = require('merge-stream');
 
 gulp.task('default', ['watch'], function() {
   return gutil.log("Gulp is running...");
@@ -10,10 +11,16 @@ gulp.task('default', ['watch'], function() {
 
 // configure the jshint task
 gulp.task('lint', function() {
-  return gulp.src('./app/js/**/*.js')
+  var sourceFiles = gulp.src('./app/js/**/*.js')
       //.pipe(jshint())
       .pipe(jshint('.jshintrc'))
       .pipe(jshint.reporter('jshint-stylish'));
+
+  var testFiles = gulp.src('./app/test/**/*.js')
+      .pipe(jshint('.jshintrc'))
+      .pipe(jshint.reporter('jshint-stylish'));
+
+  return merge(sourceFiles, testFiles);
 });
 
 // configure which files to watch
