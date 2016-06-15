@@ -16,9 +16,11 @@ squidApp.filter('customFormatDate', function () {
             return numDays + ' days ago';
         } else if (numDays === 1) {
             return '1 day ago';
+        } else if (numDays === -1) {
+            return '1 day from now';
         } else {
             numDays *= (-1);
-            return numDays + ' from now';
+            return numDays + ' days from now';
         }
     };
 });
