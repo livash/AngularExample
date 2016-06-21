@@ -6,7 +6,8 @@
     <hr />
     <div class="row">
         <div class="flash-card span5 well" 
-            ng-repeat="country in countries" ng-click="showCapital($event, country.capital)">
+            ng-repeat="country in countries"
+            ng-click="showCapital($event, $index)">
             <div class="country-card" country="country">
         </div>
     </div>
