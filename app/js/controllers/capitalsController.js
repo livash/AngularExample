@@ -20,5 +20,7 @@ squidApp.controller('capitalsController', function capitalsController($scope) {
 
   $scope.description = 'Guess the capital of this country';
   $scope.countries = data;
-  $scope.showCapital = ( (event, name) => $(event.currentTarget).text(name) );
+  $scope.showCapital = (event, name) => {
+      $(event.currentTarget).text(name);
+  };
 });
