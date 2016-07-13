@@ -5,7 +5,8 @@ var squidApp = angular.module('squidApp', ['ngRoute'])
         $routeProvider.when('/starwars',
             {
                 templateUrl: 'templates/StarWarsData.html',
-                controller: 'starWarsController'
+                controller: 'starWarsController',
+                controllerAs: 'swCtrl'
             }
         );
         $routeProvider.when('/colors',
