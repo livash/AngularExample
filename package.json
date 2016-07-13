@@ -8,6 +8,10 @@
   "dependencies": {
     "express": "4.13.0"
   },
+  "scripts": {
+    "start": "node scripts/web-server.js",
+    "test": "echo \"No test specified  \""
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat-util": "^0.5.5",
