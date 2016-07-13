@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node scripts/web-server.js",
-    "test": "echo \"No test specified  \""
+    "test": "gulp test"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
