@@ -1,20 +1,20 @@
-<h3>D3 version {{d3Version}}</h3>
+<h3>D3 version {{d3Ctrl.d3Version}}</h3>
 
 <div class="row">
   <div class="span12">
-    <d3piechart data="data" width="300" height="300"></d3piechart>
-    <d3piechart data="data" width="300" height="300" donut="true"></d3piechart>
+    <d3piechart data="d3Ctrl.data" width="300" height="300"></d3piechart>
+    <d3piechart data="d3Ctrl.data" width="300" height="300" donut="true"></d3piechart>
   </div>
 </div>
 
 <div class="row">
   <div class="span12">
-    <d3column data="data" width="600" height="200"></d3column>
+    <d3column data="d3Ctrl.data" width="600" height="200"></d3column>
   </div>
 </div>
 
 <div class="row">
   <div class="span12">
-    <d3line data="data" margin="margin" width="600" height="200"></d3line>
+    <d3line data="d3Ctrl.data" margin="d3Ctrl.margin" width="600" height="200"></d3line>
   </div>
 </div>

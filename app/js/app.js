@@ -30,7 +30,8 @@ var squidApp = angular.module('squidApp', ['ngRoute'])
         $routeProvider.when('/d3',
             {
                 templateUrl: 'templates/d3Examples.html',
-                controller: 'd3ExamplesController'
+                controller: 'd3ExamplesController',
+                controllerAs: 'd3Ctrl'
             }
         );
         

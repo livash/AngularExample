@@ -1,7 +1,8 @@
 squidApp.controller('d3ExamplesController',
-  function capitalsController($scope) {
-    $scope.d3Version = d3.version;
-    $scope.data = [
+  function capitalsController() {
+    let d3Ctrl = this;
+    d3Ctrl.d3Version = d3.version;
+    d3Ctrl.data = [
       {x: 10, y: 20},
       {x: 20, y: 14},
       {x: 30, y: 20},
@@ -13,9 +14,9 @@ squidApp.controller('d3ExamplesController',
       {x: 90, y: 23},
       {x: 100, y: 7}
     ];
-    $scope.width = 600;
-    $scope.height = 150;
-    $scope.margin = {
+    d3Ctrl.width = 600;
+    d3Ctrl.height = 150;
+    d3Ctrl.margin = {
       left: 25,
       top: 35,
       right: 25,
